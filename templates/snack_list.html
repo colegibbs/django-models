@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% for thing in object_list %}
+  <h2>
+    <a href="{% url 'snack_detail' snack.pk %}">{{snack.name}}</a>
+  </h2>
+{% endfor %}
