@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav>
+  <h1>
+    <a href="{% url 'snack_list' %}">List</a>
+  </h1>
+</nav>
 <h1>{{ snacks.name }}</h1>
 <h3>Description: {{ snacks.description }}</h3>
 <h3>Purchaser: {{ snacks.purchaser }}</h3>
