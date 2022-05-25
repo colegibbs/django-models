@@ -1,8 +1,13 @@
-from urllib import response
 from django.test import TestCase
 from django.urls import reverse
+from .models import Snacks
+from django.contrib.auth import get_user_model
 
 class SnacksTest(TestCase):
+  def setUp(self):
+    user = get_user_model().objects.create(username="tester",password="tester")
+    Snacks.objects.create(name="rake", purchaser=user, description="description")
+
   def test_snack_list_status_code(self):
     url = reverse("snack_list")
     response = self.client.get(url)
@@ -21,7 +26,7 @@ class SnacksTest(TestCase):
     self.assertTemplateUsed(response, 'base.html')
 
   def test_snack_page_status_code(self):
-    url = reverse("snack_detail",args=[1,])
+    url = reverse("snack_detail",args=(1,))
     response = self.client.get(url)
     self.assertEqual(response.status_code, 200)
 

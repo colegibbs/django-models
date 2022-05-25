@@ -26,4 +26,4 @@ Use the command `python manage.py test` to run the tests.
 
 ### Any tests of note?
 
-Not all of the tests are passing. I can't get the test on the snack_detail path to work. I had a TA come in and look at it, but we were unable to figure it out. I tried to do some searching after that, but I had no success. I'll bring it up to JB in class tomorrow.
+No test of note.
